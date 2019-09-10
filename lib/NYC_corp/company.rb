@@ -19,4 +19,3 @@ class  NYCCorp::Company
 
 end
 
-#second commit

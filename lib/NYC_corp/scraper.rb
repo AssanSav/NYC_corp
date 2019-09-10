@@ -8,4 +8,3 @@ class NYCCorp::Scraper
 
 end
 
-#second commit
