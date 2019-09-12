@@ -2,11 +2,11 @@ class  NYCCorp::CLI
 
     def call 
             @input = nil 
-        until @input == "exit" 
-            puts "\nWelcome to NYC 50 Best Highly rated CORPORATIONS".colorize(:blue)
-            puts "Type 'MENU' to display companies".colorize(:yellow)
+        until @input == "exit" && @input == "back"
+            puts "\nWelcome to NYC 50 Highly rated CORPORATIONS".colorize(:blue)
+            puts "Type 'MENU' to display companies Names".colorize(:yellow)
             puts "Type 'ALL' to dysplay all Companies".colorize(:yellow)
-            puts "Type 'EXIT' to exit".colorize(:yellow)
+            puts "Type 'EXIT' to exit!".colorize(:yellow)
             
             @input = gets.strip.downcase
         case @input 
@@ -14,11 +14,13 @@ class  NYCCorp::CLI
                 listBy_name
             when "all"
                 listAll_Corp
+            when "back"
+                checker
             when "exit"
             puts "GOODBYE & THANKS FOR YOUR BUSINESS!".colorize(:blue)
                  exit
             else 
-            puts "WOOPS! Didin't understand!!!".colorize(:red)
+            puts "WOOPS! INVALID INPUT!!!".colorize(:red)
             call
             end
         end
@@ -29,7 +31,7 @@ class  NYCCorp::CLI
         NYCCorp::Company.all.each.with_index(1) do |corp, index|
             puts "#{index}. #{corp.name.colorize(:blue)}"
         end
-        listBy_number
+        checker
     end
 
 
@@ -45,7 +47,7 @@ class  NYCCorp::CLI
 
 
     def listBy_number
-        puts "\nEnter 1 to 50 or Exit to MENU".colorize(:green) 
+        puts "\nEnter 1 to 50 or BACK to MENU".colorize(:green) 
         @input = gets.strip
         choice = @input.to_i
     if (1..NYCCorp::Company.all.size).include?(choice) && choice <= NYCCorp::Company.all.size && @choice != "exit"
@@ -57,13 +59,12 @@ class  NYCCorp::CLI
         puts "Link: #{selection.link.colorize(:red)}"
         checker
         else 
-            puts "WOOPS! Wrong TYPO...".colorize(:red)
+            puts "BACK TO THE MENU...!".colorize(:red)
         call
         end
     end
 
     def checker 
-        #puts "What would you like to see"
         listBy_number
         listBy_name
         listAll_Corp
