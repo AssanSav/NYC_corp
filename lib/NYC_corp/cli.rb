@@ -19,7 +19,7 @@ class  NYCCorp::CLI
             when "exit"
             puts "GOODBYE & THANKS FOR YOUR BUSINESS!".colorize(:blue)
                  exit
-            else 
+        else 
             puts "WOOPS! INVALID INPUT!!!".colorize(:red)
             call
             end
@@ -58,8 +58,8 @@ class  NYCCorp::CLI
         puts "Summary: #{selection.summary.colorize(:red)}"
         puts "Link: #{selection.link.colorize(:red)}"
         checker
-        else 
-            puts "BACK TO THE MENU...!".colorize(:red)
+    else 
+        puts "BACK TO THE MENU...!".colorize(:red)
         call
         end
     end
