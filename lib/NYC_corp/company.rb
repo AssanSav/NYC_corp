@@ -13,7 +13,7 @@ class  NYCCorp::Company
         company.domaine = doc.css("div.cmp-CompanyWidget-industry").text.scan(/[A-Z][a-z]+/)[0..1].join(" ").strip
         company.rating = doc.css("div.icl-Ratings-rating").text.split("").join(" ").delete(' ').strip
         company.summary = doc.css("div.cmp-CompanyWidget-description").text.strip.split(".")[0]
-        company.link = doc.css("div.cmp-CompanyWidget-links a").attr('href').value
+        company.link = doc.css("div.cmp-CompanyWidget-links a").attr('href').value.strip
         company
         end
     end 
