@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["assane.savadogo81@gmail.com"]
 
   spec.summary       = %q{NYC 50 Highly Rated Companies}
-  spec.description   = %q{Listing off: Company Names to their Ratings, Summaries and Links in NYC}
+  spec.description   = %q{Listing off: Companies Names, Ratings, Summaries and Links}
   spec.homepage      = "https://github.com/AssanSav"
   spec.license       = "MIT"
 
