@@ -41,7 +41,7 @@ class  NYCCorp::CLI
             puts "Domaine:#{corp.domaine.colorize(:red)}" 
             puts "Rating: #{corp.rating.colorize(:red)}" 
             puts "Summary: #{corp.summary}"
-            puts "Link: #{corp.link.colorize(:red)}\n\n"
+            puts "Link: https://www.indeed.com/#{corp.link.colorize(:red)}\n\n"
         end
     end
 
@@ -56,7 +56,7 @@ class  NYCCorp::CLI
         puts "Domaine: #{selection.domaine.colorize(:red)}"
         puts "Rating: #{selection.rating.colorize(:red)}"  
         puts "Summary: #{selection.summary.colorize(:red)}"
-        puts "Link: #{selection.link.colorize(:red)}"
+        puts "Link: https://www.indeed.com/#{selection.link.colorize(:red)}"
         checker
     else 
         puts "BACK TO THE MENU...!".colorize(:red)
